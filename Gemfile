@@ -8,6 +8,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'pg'
 gem 'uglifier', '>= 1.3.0'
 gem 'rails_warden'
+gem 'bcrypt'
 
 group :development do
   gem 'letter_opener_web'
