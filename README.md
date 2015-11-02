@@ -9,6 +9,7 @@ install [docker-compose](https://docs.docker.com/compose/).
 
 ```
 docker-compose build
+docker-compose run web bundle exec rake db:setup
 docker-compose up
 # run Rails server localhost:3000
 ```
