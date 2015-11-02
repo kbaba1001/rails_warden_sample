@@ -8,4 +8,12 @@ Rails.application.routes.draw do
 
     resources :sessions, only: %i(new create destroy)
   end
+
+  namespace :admins do
+    root 'sessions#new'
+
+    resources :sessions, only: %i(new create destroy)
+
+    resource :dashboard, only: %i(show)
+  end
 end
