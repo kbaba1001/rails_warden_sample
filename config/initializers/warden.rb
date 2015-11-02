@@ -1,9 +1,9 @@
-require Rails.root.join('lib/warden/failure_app')
-require Rails.root.join('lib/warden/password_strategy')
+require Rails.root.join('lib/auth/failure_app')
+require Rails.root.join('lib/auth/password_strategy')
 
 Rails.configuration.middleware.use RailsWarden::Manager do |manager|
   manager.default_strategies :password_strategy
-  manager.failure_app = FailureApp
+  manager.failure_app = Auth::FailureApp
 end
 
 # Setup Session Serialization
