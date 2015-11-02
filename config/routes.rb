@@ -12,6 +12,6 @@ Rails.application.routes.draw do
     root 'sessions#new', constraints: Auth::Constrait::SignedOut.new(:admin)
     root 'dashboards#show', as: :signed_in_root, constraints: Auth::Constrait::SignedIn.new(:admin)
 
-    resources :sessions, only: %i(new create destroy)
+    resource :session, only: %i(new create destroy)
   end
 end

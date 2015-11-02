@@ -5,7 +5,7 @@
     - @form.errors.full_messages.each do |msg|
       %li= msg
 
-= form_for @form, url: admins_sessions_path do |form|
+= form_for @form, url: admins_session_path do |form|
   %div
     = form.label :email
     = form.email_field :email

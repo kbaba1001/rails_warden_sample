@@ -16,6 +16,7 @@ class Admins::SessionsController < Admins::ApplicationController
   end
 
   def destroy
-
+    warden.logout(:admin)
+    redirect_to admins_root_path
   end
 end
