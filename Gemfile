@@ -11,6 +11,7 @@ gem 'rails_warden'
 
 group :development do
   gem 'letter_opener_web'
+  gem 'test-unit-rails'
 
   group :test do
     gem 'database_rewinder'
