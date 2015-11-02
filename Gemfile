@@ -18,6 +18,5 @@ group :development do
     gem 'pry-byebug'
     gem 'pry-rails'
     gem 'quiet_assets'
-    gem 'web-console', '~> 2.0'
   end
 end
