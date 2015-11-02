@@ -8,5 +8,5 @@
 
 User.create(
   email: 'user1@example.com',
-  password: 'password'
+  password_digest: User.hashing('password')
 )
