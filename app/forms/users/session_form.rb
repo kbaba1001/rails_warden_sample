@@ -27,7 +27,7 @@ module Users
         return
       end
 
-      unless User.token_comparison(@user.password_digest, password)
+      unless Password.compare(@user.password_digest, password)
         errors.add(:password, 'が一致しません')
       end
     end

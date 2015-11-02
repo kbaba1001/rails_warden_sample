@@ -27,7 +27,7 @@ module Admins
         return
       end
 
-      unless User.token_comparison(@admin.password_digest, password)
+      unless Password.compare(@admin.password_digest, password)
         errors.add(:password, 'が一致しません')
       end
     end

@@ -7,9 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.find_or_create_by(email: 'user1@example.com') do |user|
-  user.password_digest = User.hashing('password')
+  user.password_digest = Password.hashing('password')
 end
 
 Admin.find_or_create_by(email: 'admin1@example.com') do |admin|
-  admin.password_digest = User.hashing('password')
+  admin.password_digest = Password.hashing('password')
 end
