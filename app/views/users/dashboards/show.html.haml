@@ -1,3 +1,5 @@
 %h1 dashboard
 
-= p user.class
+= p current_user.class
+
+= link_to 'Sign out', session_path, method: :delete

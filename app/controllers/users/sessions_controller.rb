@@ -7,15 +7,16 @@ class Users::SessionsController < Users::ApplicationController
     @form = Users::SessionForm.new(params[:users_session_form])
 
     if @form.valid?
-      warden.set_user(@form.user)
+      warden.set_user(@form.user, scope: :user)
 
-      redirect_to dashboard_path
+      redirect_to signed_in_root_path
     else
       render :new
     end
   end
 
   def destroy
-
+    warden.logout(:user)
+    redirect_to root_path
   end
 end

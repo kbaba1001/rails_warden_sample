@@ -1,8 +1,8 @@
-module Users
+module Admins
   class SessionForm
     include ActiveModel::Model
 
-    attr_reader :user
+    attr_reader :admin
 
     attr_accessor :email
     attr_accessor :password
@@ -16,18 +16,18 @@ module Users
       @params = params
       @email = params[:email]
       @password = params[:password]
-      @user = User.find_by(email: @email) if @email
+      @admin = Admin.find_by(email: @email) if @email
     end
 
     private
 
     def authenticate
-      unless @user
-        errors.add(:base, 'ユーザーが見つかりません')
+      unless @admin
+        errors.add(:base, '管理者が見つかりません')
         return
       end
 
-      unless Password.compare(@user.password_digest, password)
+      unless Password.compare(@admin.password_digest, password)
         errors.add(:password, 'が一致しません')
       end
     end
