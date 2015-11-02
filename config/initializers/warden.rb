@@ -2,7 +2,7 @@ require Rails.root.join('lib/auth/failure_app')
 require Rails.root.join('lib/auth/password_strategy')
 
 Rails.configuration.middleware.use RailsWarden::Manager do |manager|
-  manager.default_strategies :password_strategy
+  # manager.default_strategies :password_strategy
   manager.failure_app = Auth::FailureApp
 end
 
@@ -12,8 +12,7 @@ class Warden::SessionSerializer
     record.id
   end
 
-  def deserialize(keys)
-    klass, id = keys
-    klass.find_by(id: id)
+  def deserialize(id)
+    User.find(id)
   end
 end

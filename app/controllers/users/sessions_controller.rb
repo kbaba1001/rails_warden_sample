@@ -1,14 +1,15 @@
 class Users::SessionsController < Users::ApplicationController
   def new
-    @form = Users::SessionForm.new(User.new)
+    @form = Users::SessionForm.new
   end
 
   def create
-    @form = Users::SessionForm.new(User.new)
+    @form = Users::SessionForm.new(params[:users_session_form])
 
-    if @form.validate(params[:users_session])
-      # ログイン
-      render text: 'TODO ログイン'
+    if @form.valid?
+      warden.set_user(@form.user)
+
+      redirect_to dashboard_path
     else
       render :new
     end
