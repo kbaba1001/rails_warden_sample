@@ -1,0 +1,16 @@
+%h1 Admin sign in
+
+- if @form.errors.messages.present?
+  %ul
+    - @form.errors.full_messages.each do |msg|
+      %li= msg
+
+= form_for @form, url: admins_sessions_path do |form|
+  %div
+    = form.label :email
+    = form.email_field :email
+  %div
+    = form.label :password
+    = form.password_field :password
+  %div
+    = form.submit "Sign in"
