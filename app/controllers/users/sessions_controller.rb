@@ -9,7 +9,7 @@ class Users::SessionsController < Users::ApplicationController
     if @form.valid?
       warden.set_user(@form.user)
 
-      redirect_to dashboard_path
+      redirect_to signed_in_root_path
     else
       render :new
     end

@@ -9,7 +9,7 @@ class Admins::SessionsController < Admins::ApplicationController
     if @form.valid?
       warden.set_user(@form.admin, scope: :admin)
 
-      redirect_to admins_dashboard_path
+      redirect_to admins_signed_in_root_path
     else
       render :new
     end
