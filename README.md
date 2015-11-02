@@ -1,28 +1,14 @@
-== README
+# Rails Warden Sample
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+authenticate with [warden](https://github.com/hassox/warden) on Rails.
+don't use [rails_warden](https://github.com/hassox/rails_warden).
 
-Things you may want to cover:
+## using
 
-* Ruby version
+install [docker-compose](https://docs.docker.com/compose/).
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+```
+docker-compose build
+docker-compose up
+# run Rails server localhost:3000
+```
